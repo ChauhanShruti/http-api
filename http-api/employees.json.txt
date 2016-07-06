@@ -1,0 +1,27 @@
+[
+{
+    "id": "1",
+    "name": "Shruti",
+    "age": "20",
+    "salary":"20000"
+  },
+{
+    "id": "2",
+    "name": "Divya",
+    "age": "22",
+    "salary":"40000"
+  },
+{
+    "id": "3",
+    "name": "Rekha",
+    "age": "21",
+    "salary":"300000"
+  },
+{
+    "id": "4",
+    "name": "Piyush",
+    "age": "24",
+    "salary":"100000"
+  }
+  
+]

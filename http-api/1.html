@@ -1,0 +1,50 @@
+<html >
+  <head>
+    
+    <title> Assign 1 </title>
+      <!--Write a http get function to read values from a json file and display the result in template. -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+      
+	    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+      <script>
+        var empApp = angular.module('empApp', []);
+        empApp.controller('EmployeeCtrl', function ($scope, $http){
+          $http.get('employees.json').success(function(data) {
+            $scope.employees = data;
+          });
+        });
+      </script>
+  </head>
+
+  <body ng-app="empApp" >
+    <div class="container" ng-controller="EmployeeCtrl">
+	     <h2> Fetching JSON by http Get Method </h2>
+    <table class="table table-striped table-bordered">
+      <thead>
+      <tr class="success">
+            <th>Id</th>
+		    <th>Name</th>
+            <th>Age</th>
+		    <th>Salary</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="emp in employees">
+        <td>{{emp.id}}</td>
+		<td>{{emop.name}}</td>
+        <td>{{emp.age}}</td>
+		<td>{{emp.salary}}</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+  </body>
+  </html>
